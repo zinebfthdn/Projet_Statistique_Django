@@ -1,6 +1,6 @@
 # Projet Django - Statistiques
 
-Ce projet est une application Django dédiée aux statistiques et à la manipulation de données. Il utilise des bibliothèques populaires telles que **Pandas**, **NumPy**, **Plotly**, et d'autres pour offrir des fonctionnalités analytiques et interactives.
+Ce projet est une application Django dédiée aux statistiques et à la manipulation de données. Il utilise des bibliothèques populaires, afin pour offrir des fonctionnalités analytiques et interactives.
 
 
 # Guide d'Installation et d'Exécution
@@ -16,8 +16,9 @@ Installez toutes les bibliothèques nécessaires avec la commande suivante :
 ## 3. Configuration du projet Django
 ### 1.  Lancez les migrations
 Vous utilisez les commandes suivantes :
-**python manage.py makemigrations**
-**python manage.py migrate**
+
+- **python manage.py makemigrations**
+- **python manage.py migrate**
 
 ### 2.  Créez un superutilisateur
 Pour gérer les connexions utilisateur et accéder à l'administration Django :
@@ -29,6 +30,40 @@ Utilisez la commande : **python manage.py runserver**
 
 ### 4. Lancez le serveur local
 Ouvrez votre navigateur et accédez à l'application via **http://127.0.0.1:8000**.
+
+
+---
+
+
+## La structure du Projet  
+
+
+### 1. **`stat_projet/`**
+Le répertoire principal du projet Django, contenant les fichiers de configuration comme :
+- `settings.py` : Configuration de base (base de données, apps installées, fichiers statiques, etc.).
+- `urls.py` : Fichier pour le routage principal.
+- `wsgi.py` et `asgi.py` : Points d'entrée pour le déploiement.
+
+
+### 2. **`stat_app/`**
+Le répertoire de l'application principale du projet, contenant :
+- `models.py` : Définition des modèles de base de données (par exemple, fichiers importés, résultats, etc.).
+- `views.py` : Logique métier et rendu des pages.
+- `forms.py` : Gestion des formulaires Django.
+- `templates/` : Fichiers HTML pour l'interface utilisateur.
+- `urls.py` : Routes spécifiques à cette application.
+
+
+### 4. **`db.sqlite3`**
+Base de données SQLite utilisée pour stocker les données de l'application.
+
+### 5. **`manage.py`**
+Outil en ligne de commande pour interagir avec le projet (création de migrations, lancement du serveur, etc.).
+
+### 6. **`requirements.txt`**
+Liste des bibliothèques Python nécessaires, installées via `pip`.
+
+![structure](pictures/image.png) 
 
 
 ## Fonctionnalités principales
@@ -55,14 +90,46 @@ Ouvrez votre navigateur et accédez à l'application via **http://127.0.0.1:8000
 
 ## Organisation de l'application
 
-L'application est divisée en trois sections principales accessibles via le tableau de bord :
+L'application est divisée en ***quatres sections principales*** accessibles via le tableau de bord :
 
-### 1. **Importation de fichiers et calculs statistiques**
+### 1. **Login page**
+
+![login](pictures/login.png) 
+
+
+### 2. **Importation de fichiers et calculs statistiques**
 - Permet de charger des fichiers **CSV** et**Excel**.
 
 ![Importation de fichiers](pictures/upload.png) 
+![Importation de fichiers](pictures/upload2.png) 
 
-- Calcule les statistiques descriptives :
+
+## **Avec l'option de :**
+
+## **Visualisation des données**
+L'utilisateur peut choisir différents types de visualisations pour explorer les données importées, comme des barplots, heatmaps, scatterplots, et plus encore.
+
+![Visualisation des données](pictures/visualiser.png)
+
+- Exemple :
+![Visualisation des données](pictures/visualiser2.png)
+![Visualisation des données](pictures/visualiser3.png)
+
+- Avec une gestion d'erreur :
+  
+![Visualisation des données](pictures/visualiser4.png)
+![Visualisation des données](pictures/visualiser5.png)
+
+
+
+#### **Parcourir les données**
+L'utilisateur peut parcourir les données en sélectionnant des colonnes spécifiques ou en appliquant des filtres pour analyser les enregistrements.
+
+![Parcourir les données](pictures/parcourir.png)
+
+
+
+- **Calcule les statistiques descriptives :**
   - Moyenne
   - Médiane
   - Mode
@@ -70,22 +137,71 @@ L'application est divisée en trois sections principales accessibles via le tabl
   - Écart-type
   - Étendue
 
+
+![calcules](pictures/calc.png) 
+
+- Voici un exemple :
+  
+![calculesexmpl](pictures/calc2.png) 
+
+
+
 ---
 
 ### 2. **Lois de probabilités**
 Explorez et visualisez différentes lois de probabilité :
+
 - **Bernoulli**
+  
+  ![bernoulli](pictures/bernoulli.png)
+  ![bernoulli](pictures/bernoulli2.png)
+  
 - **Binomiale**
+  
+  ![binomiale](pictures/binomial.png)
+  ![binomiale](pictures/binomial2.png)
+
+
 - **Uniforme**
+  
+  ![uniforme](pictures/uni.png)
+  ![uniforme](pictures/uni2.png)
+
+
 - **Poisson**
+  
+  ![poisson](pictures/poi.png)
+  ![poisson](pictures/poi2.png)
+
 - **Exponentielle**
+  
+  ![exponentielle](pictures/expo.png)
+  ![exponentielle](pictures/expo2.png)
+
 - **Normale continue**
+  
+  ![normale](pictures/nor.png)
+  ![normale](pictures/nor2.png)
+
 
 ---
 
 ### 3. **Tests d'hypothèses**
 - Effectuez des **tests Z** et **tests T** pour analyser vos données.
 - Affichez les résultats avec des visualisations conviviales et des calculs détaillés.
+  ![testes](pictures/test.png)
+
+- **Z-Test**
+
+
+  ![Z](pictures/Z.png)
+  ![Z](pictures/Zres.png)
+
+  
+- **T-Test**
+  ![T](pictures/T.png)
+  ![T](pictures/Tres.png)
+
 
 ---
 
@@ -93,12 +209,31 @@ Explorez et visualisez différentes lois de probabilité :
 
 L'application repose sur des bibliothèques robustes pour offrir des fonctionnalités avancées :
 
-- **Django** : Framework backend pour le développement web.
-- **Pandas** : Manipulation et analyse de données.
+### Backend
+- **Django** : Framework backend pour le développement web, incluant des fonctionnalités d'authentification et de gestion de sessions.
+
+### Manipulation de données
+- **Pandas** : Manipulation et analyse des données tabulaires.
 - **NumPy** : Calculs numériques avancés.
-- **Plotly** : Visualisations interactives.
-- **Matplotlib** et **Seaborn** : Visualisation des données.
-- **SciPy** : Tests statistiques et distributions probabilistes.
+
+### Visualisation
+- **Plotly** : Visualisations interactives, y compris des graphiques comme barplots, scatterplots, histogrammes, etc.
+- **Matplotlib** : Génération de graphiques statiques.
+- **Seaborn** : Visualisation des données avec des graphiques esthétiques.
+
+### Statistiques et calculs probabilistes
+- **SciPy** : Tests statistiques (z-test, t-test, etc.) et distributions probabilistes (binomiale, normale, exponentielle, etc.).
+- **Scipy.stats** : Fournit des outils supplémentaires pour les calculs statistiques.
+
+### Outils additionnels
+- **Statistics** : Calcul de mesures statistiques telles que la moyenne, la médiane, la variance et l'écart-type.
+- **Plotly Figure Factory** : Génération avancée de graphiques spécifiques, comme les distributions KDE.
+- **Base64** : Encodage d'images en Base64 pour une intégration dans le frontend.
+- **BytesIO** : Manipulation d'objets en mémoire pour gérer des images générées par Matplotlib.
+
+### Authentification et gestion des utilisateurs
+- **Django.contrib.auth** : Authentification, connexion et déconnexion des utilisateurs.
+- **Django.contrib.messages** : Affichage des messages de validation ou d'erreur à l'utilisateur.
 
 
 ## Conclusion
