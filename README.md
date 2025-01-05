@@ -117,7 +117,7 @@ L'utilisateur peut choisir différents types de visualisations pour explorer les
 
 - Avec une gestion d'erreur :
   
-![Visualisation des données](pictures/visualiser4.png)
+![Visualisation des données](pictures/visiualiser4.png)
 ![Visualisation des données](pictures/visualiser5.png)
 
 
@@ -201,6 +201,8 @@ Explorez et visualisez différentes lois de probabilité :
 - **T-Test**
   ![T](pictures/T.png)
   ![T](pictures/Tres.png)
+  ![T](pictures/T2.png)
+
 
 
 ---
